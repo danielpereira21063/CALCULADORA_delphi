@@ -1,0 +1,174 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    bt5: TButton;
+    bt4: TButton;
+    bt9: TButton;
+    bt8: TButton;
+    bt7: TButton;
+    bt6: TButton;
+    bt2: TButton;
+    bt3: TButton;
+    bt1: TButton;
+    btDividi: TButton;
+    btSubtrai: TButton;
+    btSoma: TButton;
+    btIgual: TButton;
+    bt0: TButton;
+    btLimpar: TButton;
+    btMultiplica: TButton;
+    edtDigito: TEdit;
+    procedure bt2Click(Sender: TObject);
+    procedure bt3Click(Sender: TObject);
+    procedure bt4Click(Sender: TObject);
+    procedure bt5Click(Sender: TObject);
+    procedure bt6Click(Sender: TObject);
+    procedure bt7Click(Sender: TObject);
+    procedure bt8Click(Sender: TObject);
+    procedure bt9Click(Sender: TObject);
+    procedure bt0Click(Sender: TObject);
+    procedure bt1Click(Sender: TObject);
+    procedure btSomaClick(Sender: TObject);
+    procedure btSubtraiClick(Sender: TObject);
+    procedure btDividiClick(Sender: TObject);
+    procedure btMultiplicaClick(Sender: TObject);
+    procedure btIgualClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  operacao : char;
+  UltimoNumero : double;
+  Total : Real;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.bt0Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+    edtDigito.Text := bt0.Caption else
+    edtDigito.Text := edtDigito.Text + bt0.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt1Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text := edtDigito.Text + bt1.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt2Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt2.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt3Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt3.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt4Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt4.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt5Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt5.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt6Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt6.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt7Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt7.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt8Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text + bt8.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.bt9Click(Sender: TObject);
+begin
+  if edtDigito.Text = '0' then
+  edtDigito.Text := '';
+  edtDigito.Text:= edtDigito.Text+ bt9.Caption;
+  UltimoNumero := StrToFloat(edtDigito.Text);
+end;
+
+procedure TForm1.btIgualClick(Sender: TObject);
+begin
+  case operacao of
+  '+' : Total := Total + StrToFloat(edtDigito.Text);
+  '-' : Total := Total - StrToFloat(edtDigito.Text);
+  '/' : Total := Total / StrToFloat(edtDigito.Text);
+  '*' : Total := Total * StrToFloat(edtDigito.Text);
+  end;
+  edtDigito.Text := FloatToStr(Total);
+end;
+
+procedure TForm1.btMultiplicaClick(Sender: TObject);
+begin
+  UltimoNumero := StrToFloat(edtDigito.Text);
+  operacao := '*';
+end;
+
+procedure TForm1.btSomaClick(Sender: TObject);
+begin
+  UltimoNumero := StrToFloat(edtDigito.Text);
+  operacao := '+';
+end;
+
+procedure TForm1.btSubtraiClick(Sender: TObject);
+begin
+  UltimoNumero := StrToFloat(edtDigito.Text);
+  operacao := '-';
+end;
+
+procedure TForm1.btDividiClick(Sender: TObject);
+begin
+  UltimoNumero := StrToFloat(edtDigito.Text);
+  operacao := '/';
+end;
+
+end.
